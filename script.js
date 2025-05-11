@@ -35,11 +35,11 @@ function showMenu(restaurant) {
 function addToCart(name, price) {
   const existingItem = cart.find(item => item.name === name);
   if (existingItem) {
-    existingItem.quantity++;
+    existingItem.quantity++;  // زيادة الكمية بدلاً من إضافة عنصر مكرر
   } else {
     cart.push({ name, price, quantity: 1 });
   }
-  updateCart();
+  updateCart();  // تحديث السلة
 }
 
 function updateCart() {
