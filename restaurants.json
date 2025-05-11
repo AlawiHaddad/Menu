@@ -8,46 +8,18 @@
       {
         "name": "مأكولات",
         "items": [
-          {
-            "name": "شبس",
-            "price": 500,
-            "image": "images/chips.jpg"
-          },
-          {
-            "name": "سمبوسة",
-            "price": 200,
-            "image": "images/samosa.jpg"
-          },
-          {
-            "name": "أندومي",
-            "price": 800,
-            "image": "images/indomie.jpg"
-          },
-          {
-            "name": "بيض",
-            "price": 400,
-            "image": "images/egg.jpg"
-          }
+          { "name": "شبس", "price": 500, "image": "images/chips.jpg" },
+          { "name": "سمبوسة", "price": 200, "image": "images/samosa.jpg" },
+          { "name": "أندومي", "price": 800, "image": "images/indomie.jpg" },
+          { "name": "بيض", "price": 400, "image": "images/egg.jpg" }
         ]
       },
       {
         "name": "مشروبات",
         "items": [
-          {
-            "name": "عصير ليمون",
-            "price": 500,
-            "image": "images/lemon_juice.jpg"
-          },
-          {
-            "name": "مشكل",
-            "price": 900,
-            "image": "images/mixed_juice.jpg"
-          },
-          {
-            "name": "عصير آيسكريم",
-            "price": 800,
-            "image": "images/icecream_juice.jpg"
-          }
+          { "name": "عصير ليمون", "price": 500, "image": "images/lemon_juice.jpg" },
+          { "name": "مشكل", "price": 900, "image": "images/mixed_juice.jpg" },
+          { "name": "عصير آيسكريم", "price": 800, "image": "images/icecream_juice.jpg" }
         ]
       }
     ]
@@ -61,66 +33,22 @@
       {
         "name": "مأكولات",
         "items": [
-          {
-            "name": "براوطا بالبيض",
-            "price": 400,
-            "image": "images/braota_egg.jpg"
-          },
-          {
-            "name": "براوطا بالبيض والجبن",
-            "price": 500,
-            "image": "images/braota_egg_cheese.jpg"
-          },
-          {
-            "name": "شاورما",
-            "price": 600,
-            "image": "images/shawarma.jpg"
-          },
-          {
-            "name": "أندومي",
-            "price": 800,
-            "image": "images/indomie.jpg"
-          },
-          {
-            "name": "بيض",
-            "price": 400,
-            "image": "images/egg.jpg"
-          },
-          {
-            "name": "دجاج محمس",
-            "price": 1000,
-            "image": "images/fried_chicken.jpg"
-          }
+          { "name": "براوطا بالبيض", "price": 400, "image": "images/braota_egg.jpg" },
+          { "name": "براوطا بالبيض والجبن", "price": 500, "image": "images/braota_egg_cheese.jpg" },
+          { "name": "شاورما", "price": 600, "image": "images/shawarma.jpg" },
+          { "name": "أندومي", "price": 800, "image": "images/indomie.jpg" },
+          { "name": "بيض", "price": 400, "image": "images/egg.jpg" },
+          { "name": "دجاج محمس", "price": 1000, "image": "images/fried_chicken.jpg" }
         ]
       },
       {
         "name": "مشروبات",
         "items": [
-          {
-            "name": "عصير خربز",
-            "price": 500,
-            "image": "images/melon_juice.jpg"
-          },
-          {
-            "name": "عصير موز",
-            "price": 500,
-            "image": "images/banana_juice.jpg"
-          },
-          {
-            "name": "عصير ليمون",
-            "price": 500,
-            "image": "images/lemon_juice.jpg"
-          },
-          {
-            "name": "عصير أفوكادو",
-            "price": 1200,
-            "image": "images/avocado_juice.jpg"
-          },
-          {
-            "name": "عصير آيسكريم",
-            "price": 800,
-            "image": "images/icecream_juice.jpg"
-          }
+          { "name": "عصير خربز", "price": 500, "image": "images/melon_juice.jpg" },
+          { "name": "عصير موز", "price": 500, "image": "images/banana_juice.jpg" },
+          { "name": "عصير ليمون", "price": 500, "image": "images/lemon_juice.jpg" },
+          { "name": "عصير أفوكادو", "price": 1200, "image": "images/avocado_juice.jpg" },
+          { "name": "عصير آيسكريم", "price": 800, "image": "images/icecream_juice.jpg" }
         ]
       }
     ]
@@ -134,101 +62,29 @@
       {
         "name": "مأكولات",
         "items": [
-          {
-            "name": "شبس",
-            "price": 500,
-            "image": "images/chips.jpg"
-          },
-          {
-            "name": "سمبوسة",
-            "price": 200,
-            "image": "images/samosa.jpg"
-          },
-          {
-            "name": "كباب",
-            "price": 200,
-            "image": "images/kebab.jpg"
-          },
-          {
-            "name": "باقية",
-            "price": 200,
-            "image": "images/baqiya.jpg"
-          },
-          {
-            "name": "طعمية",
-            "price": 500,
-            "image": "images/falafel.jpg"
-          },
-          {
-            "name": "أندومي",
-            "price": 800,
-            "image": "images/indomie.jpg"
-          },
-          {
-            "name": "بروست",
-            "price": 1700,
-            "image": "images/broast.jpg"
-          },
-          {
-            "name": "تشكن فرايز",
-            "price": 2300,
-            "image": "images/chicken_fries.jpg"
-          },
-          {
-            "name": "شاورما",
-            "price": 600,
-            "image": "images/shawarma.jpg"
-          },
-          {
-            "name": "زنجر",
-            "price": 1700,
-            "image": "images/zinger.jpg"
-          }
+          { "name": "شبس", "price": 500, "image": "images/chips.jpg" },
+          { "name": "سمبوسة", "price": 200, "image": "images/samosa.jpg" },
+          { "name": "كباب", "price": 200, "image": "images/kebab.jpg" },
+          { "name": "باقية", "price": 200, "image": "images/baqiya.jpg" },
+          { "name": "طعمية", "price": 500, "image": "images/falafel.jpg" },
+          { "name": "أندومي", "price": 800, "image": "images/indomie.jpg" },
+          { "name": "بروست", "price": 1700, "image": "images/broast.jpg" },
+          { "name": "تشكن فرايز", "price": 2300, "image": "images/chicken_fries.jpg" },
+          { "name": "شاورما", "price": 600, "image": "images/shawarma.jpg" },
+          { "name": "زنجر", "price": 1700, "image": "images/zinger.jpg" }
         ]
       },
       {
         "name": "مشروبات",
         "items": [
-          {
-            "name": "عصير مانجو",
-            "price": 1500,
-            "image": "images/mango_juice.jpg"
-          },
-          {
-            "name": "مشكل",
-            "price": 1200,
-            "image": "images/mixed_juice.jpg"
-          },
-          {
-            "name": "عصير ليمون",
-            "price": 500,
-            "image": "images/lemon_juice.jpg"
-          },
-          {
-            "name": "عصير آيسكريم",
-            "price": 1200,
-            "image": "images/icecream_juice.jpg"
-          },
-          {
-            "name": "عصير باباي",
-            "price": 1200,
-            "image": "images/papaya_juice.jpg"
-          },
-          {
-            "name": "عصير رمان",
-            "price": 1200,
-            "image": "images/pomegranate_juice.jpg"
-          },
-          {
-            "name": "عصير فراولة",
-            "price": 800,
-            "image": "images/strawberry_juice.jpg"
-          },
-          {
-            "name": "عصير برتقال",
-            "price": 1000,
-            "image": "images/orange_juice.jpg"
-          }
+          { "name": "عصير مانجو", "price": 1500, "image": "images/mango_juice.jpg" },
+          { "name": "مشكل", "price": 1200, "image": "images/mixed_juice.jpg" },
+          { "name": "عصير ليمون", "price": 500, "image": "images/lemon_juice.jpg" },
+          { "name": "عصير آيسكريم", "price": 1200, "image": "images/icecream_juice.jpg" },
+          { "name": "عصير باباي", "price": 1200, "image": "images/papaya_juice.jpg" },
+          { "name": "عصير رمان", "price": 1200, "image": "images/pomegranate_juice.jpg" },
+          { "name": "عصير فراولة", "price": 800, "image": "images/strawberry_juice.jpg" },
+          { "name": "عصير برتقال", "price": 1000, "image": "images/orange_juice.jpg" }
         ]
       }
     ]
