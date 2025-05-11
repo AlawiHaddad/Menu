@@ -9,62 +9,73 @@ fetch('restaurants.json')
     restaurants.forEach(restaurant => {
       const restaurantDiv = document.createElement('div');
       restaurantDiv.classList.add('restaurant');
-
-      const logo = document.createElement('img');
-      logo.src = restaurant.logo;
-      logo.alt = restaurant.name;
-      restaurantDiv.appendChild(logo);
-
+      
       const name = document.createElement('h2');
       name.textContent = restaurant.name;
       restaurantDiv.appendChild(name);
 
-      restaurant.categories.forEach(category => {
-        const categoryDiv = document.createElement('div');
-        categoryDiv.classList.add('category');
-
-        const categoryTitle = document.createElement('h3');
-        categoryTitle.textContent = category.name;
-        categoryDiv.appendChild(categoryTitle);
-
-        const itemsList = document.createElement('ul');
-        category.items.forEach(item => {
-          const itemLi = document.createElement('li');
-          itemLi.classList.add('item');
-
-          const itemName = document.createElement('span');
-          itemName.textContent = item.name;
-          itemLi.appendChild(itemName);
-
-          const itemPrice = document.createElement('span');
-          itemPrice.textContent = ` - ${item.price} ريال`;
-          itemLi.appendChild(itemPrice);
-
-          const itemImage = document.createElement('img');
-          itemImage.src = item.image;
-          itemImage.alt = item.name;
-          itemImage.style.width = '50px';
-          itemLi.appendChild(itemImage);
-
-          const addButton = document.createElement('button');
-          addButton.textContent = 'إضافة إلى السلة';
-          addButton.onclick = () => {
-            cart.push({ name: item.name, price: item.price });
-            currentRestaurant = restaurant; // تحديد المطعم عند الإضافة
-            updateCartDisplay();
-          };
-          itemLi.appendChild(addButton);
-
-          itemsList.appendChild(itemLi);
-        });
-
-        categoryDiv.appendChild(itemsList);
-        restaurantDiv.appendChild(categoryDiv);
+      // عند الضغط على المطعم يظهر المنيو
+      restaurantDiv.addEventListener('click', () => {
+        currentRestaurant = restaurant;
+        displayMenu(restaurant);
       });
 
       container.appendChild(restaurantDiv);
     });
   });
+
+// عرض المنيو الخاص بالمطعم عند الضغط عليه
+function displayMenu(restaurant) {
+  const container = document.getElementById('menu-container');
+  container.innerHTML = ''; // مسح المحتوى الحالي
+
+  const logo = document.createElement('img');
+  logo.src = restaurant.logo;
+  logo.alt = restaurant.name;
+  container.appendChild(logo);
+
+  restaurant.categories.forEach(category => {
+    const categoryDiv = document.createElement('div');
+    categoryDiv.classList.add('category');
+
+    const categoryTitle = document.createElement('h3');
+    categoryTitle.textContent = category.name;
+    categoryDiv.appendChild(categoryTitle);
+
+    const itemsList = document.createElement('ul');
+    category.items.forEach(item => {
+      const itemLi = document.createElement('li');
+      itemLi.classList.add('item');
+
+      const itemName = document.createElement('span');
+      itemName.textContent = item.name;
+      itemLi.appendChild(itemName);
+
+      const itemPrice = document.createElement('span');
+      itemPrice.textContent = ` - ${item.price} ريال`;
+      itemLi.appendChild(itemPrice);
+
+      const itemImage = document.createElement('img');
+      itemImage.src = item.image;
+      itemImage.alt = item.name;
+      itemImage.style.width = '50px';
+      itemLi.appendChild(itemImage);
+
+      const addButton = document.createElement('button');
+      addButton.textContent = 'إضافة إلى السلة';
+      addButton.onclick = () => {
+        cart.push({ name: item.name, price: item.price });
+        updateCartDisplay();
+      };
+      itemLi.appendChild(addButton);
+
+      itemsList.appendChild(itemLi);
+    });
+
+    categoryDiv.appendChild(itemsList);
+    container.appendChild(categoryDiv);
+  });
+}
 
 // تحديث عرض السلة
 function updateCartDisplay() {
@@ -84,8 +95,8 @@ function updateCartDisplay() {
 }
 
 // إنشاء رسالة الطلب للواتساب
-function generateOrderMessage(restaurant) {
-  let message = `مرحباً، أرغب في الطلب من ${restaurant.name}:\n\n`;
+function generateOrderMessage() {
+  let message = `مرحباً، أرغب في الطلب من ${currentRestaurant.name}:\n\n`;
   cart.forEach(item => {
     message += `- ${item.name} (${item.price} ريال)\n`;
   });
@@ -104,6 +115,6 @@ document.getElementById('order-button').addEventListener('click', () => {
     alert('يرجى اختيار المطعم أولاً.');
     return;
   }
-  const message = generateOrderMessage(currentRestaurant);
+  const message = generateOrderMessage();
   window.open(`https://wa.me/${currentRestaurant.whatsapp}?text=${encodeURIComponent(message)}`, '_blank');
 });

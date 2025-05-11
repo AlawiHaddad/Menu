@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>قائمة المطاعم</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>قائمة المطاعم</h1>
-  <div class="restaurants-container" id="restaurants-container"></div>
+    <h1>اختار مطعمك</h1>
 
-  <div id="cart-container">
-    <h2>سلة الطلبات</h2>
+    <!-- عرض قائمة المطاعم -->
+    <div id="restaurants-container"></div>
+
+    <!-- عرض المنيو عند اختيار المطعم -->
+    <div id="menu-container"></div>
+
+    <!-- سلة المشتريات -->
     <ul id="cart-list"></ul>
-    <p>المجموع: <span id="total-price">0</span> ريال</p>
-    <button id="order-button">تأكيد الطلب عبر واتسآب</button>
-  </div>
+    <p>الإجمالي: <span id="total-price">0</span> ريال</p>
 
-  <script src="script.js"></script>
+    <!-- زر لتأكيد الطلب -->
+    <button id="order-button">تأكيد الطلب</button>
+
+    <script src="script.js"></script>
 </body>
 </html>
