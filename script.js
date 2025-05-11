@@ -7,52 +7,59 @@ function loadRestaurants() {
     .then(data => {
       const container = document.getElementById('restaurants-container');
       container.innerHTML = '';
-      data.restaurants.forEach(restaurant => {
+      data.forEach(restaurant => {
         const div = document.createElement('div');
         div.classList.add('restaurant-card');
         div.textContent = restaurant.name;
         div.onclick = () => showMenu(restaurant);
         container.appendChild(div);
       });
-    });
+    })
+    .catch(error => console.error('Error loading restaurants:', error));
 }
 
 function showMenu(restaurant) {
-  currentMenu = restaurant.menu;
+  currentMenu = restaurant.categories;
   const container = document.getElementById('menu-container');
   container.innerHTML = `<h2>${restaurant.name}</h2>`;
-  restaurant.menu.forEach(item => {
-    const div = document.createElement('div');
-    div.classList.add('menu-item');
-    div.innerHTML = `
-      <span>${item.name} - ${item.price} ريال</span>
-      <button onclick="addToCart('${item.name}', ${item.price})">+</button>
-    `;
-    container.appendChild(div);
+  restaurant.categories.forEach(category => {
+    const categoryDiv = document.createElement('div');
+    categoryDiv.classList.add('category');
+    categoryDiv.innerHTML = `<h3>${category.name}</h3>`;
+    category.items.forEach(item => {
+      const itemDiv = document.createElement('div');
+      itemDiv.classList.add('menu-item');
+      itemDiv.innerHTML = `
+        <span>${item.name} - ${item.price} ريال</span>
+        <button onclick="addToCart('${item.name}', ${item.price})">+</button>
+      `;
+      categoryDiv.appendChild(itemDiv);
+    });
+    container.appendChild(categoryDiv);
   });
 }
 
 function addToCart(name, price) {
   const existingItem = cart.find(item => item.name === name);
   if (existingItem) {
-    existingItem.quantity++;  // زيادة الكمية بدلاً من إضافة عنصر مكرر
+    existingItem.quantity++; 
   } else {
     cart.push({ name, price, quantity: 1 });
   }
-  updateCart();  // تحديث السلة
+  updateCart();
 }
 
 function updateCart() {
-  const container = document.getElementById('cart-container');
-  container.innerHTML = '<h3>السلة</h3>';
+  const container = document.getElementById('cart-list');
+  container.innerHTML = '';
   let total = 0;
   cart.forEach(item => {
     total += item.price * item.quantity;
     container.innerHTML += `
-      <div>${item.name} x ${item.quantity} = ${item.price * item.quantity} ريال</div>
+      <li>${item.name} x ${item.quantity} = ${item.price * item.quantity} ريال</li>
     `;
   });
-  container.innerHTML += `<strong>الإجمالي: ${total} ريال</strong>`;
+  document.getElementById('total-price').textContent = total;
 }
 
 function confirmOrder() {
@@ -66,3 +73,5 @@ function confirmOrder() {
   const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
   window.open(whatsappUrl, '_blank');
 }
+
+document.getElementById('order-button').onclick = confirmOrder;
